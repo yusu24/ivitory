@@ -1,0 +1,337 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Great+Vibes&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import 'tailwindcss';
+
+@theme {
+  --font-display: 'Playfair Display', 'Georgia', serif;
+  --font-body: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-arabic: 'Amiri', serif;
+  --font-script: 'Cormorant Garamond', serif;
+
+  --color-cream: #faf6ef;
+  --color-cream-dark: #f0e9db;
+  --color-sage-50: #f4f6f1;
+  --color-sage-100: #e6ebe0;
+  --color-sage-200: #cdd8c1;
+  --color-sage-300: #aebd9c;
+  --color-sage-400: #8fa178;
+  --color-sage-500: #71835c;
+  --color-sage-600: #576647;
+  --color-sage-700: #414d36;
+  --color-sage-800: #2c3424;
+  --color-sage-900: #1b2016;
+  --color-terracotta-400: #d99a7c;
+  --color-terracotta-500: #c47c58;
+  --color-terracotta-600: #a8623f;
+  --color-ink: #2b2822;
+
+  /* Javanese-Islamic elegant invitation theme */
+  --color-ivory: #faf3e4;
+  --color-ivory-dark: #f0e4c8;
+  --color-emerald-50: #eaf1ec;
+  --color-emerald-100: #e1eae3;
+  --color-emerald-200: #c3d6c9;
+  --color-emerald-300: #96b6a2;
+  --color-emerald-400: #4c9576;
+  --color-emerald-500: #2f7a5a;
+  --color-emerald-600: #256349;
+  --color-emerald-700: #1b4d37;
+  --color-emerald-800: #123b2b;
+  --color-emerald-900: #0d2e22;
+  --color-gold-300: #e9d9aa;
+  --color-gold-400: #d8bd7c;
+  --color-gold-500: #c6a353;
+  --color-gold-600: #a8843a;
+  --color-maroon-600: #7a2331;
+  --color-maroon-700: #5c1a25;
+
+  /* Warm minimalist invitation theme (elegant-mono template) */
+  --font-cursive: 'Alex Brush', cursive;
+  --font-wide: 'Jost', system-ui, sans-serif;
+  --color-taupe-50: #f7f3ee;
+  --color-taupe-100: #eee5d8;
+  --color-taupe-200: #ddccb2;
+  --color-taupe-300: #c7ac84;
+  --color-taupe-400: #ab8c63;
+  --color-taupe-500: #8f7350;
+  --color-taupe-600: #715a3f;
+  --color-taupe-700: #574632;
+  --color-taupe-800: #3a2f22;
+  --color-taupe-900: #241d15;
+
+  /* Boho Terracotta template theme */
+  --font-boho-serif: 'Playfair Display', serif;
+  --font-boho-script: 'Great Vibes', cursive;
+  --font-boho-sans: 'Montserrat', sans-serif;
+  --color-boho-bg: #FDFBF7;
+  --color-boho-terracotta: #C86B53;
+  --color-boho-terracotta-light: #E08972;
+  --color-boho-terracotta-dark: #A34E39;
+  --color-boho-sage: #8A9A86;
+  --color-boho-text: #4A4A4A;
+}
+
+@keyframes slide {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    margin: 0;
+    font-family: var(--font-body);
+    background: var(--color-cream);
+    color: var(--color-ink);
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+
+  img, video {
+    max-width: 100%;
+    height: auto;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+  }
+}
+
+
+@layer utilities {
+  .font-display {
+    font-family: var(--font-display);
+  }
+  .font-arabic {
+    font-family: var(--font-arabic);
+  }
+  .font-script {
+    font-family: var(--font-script);
+  }
+  .font-boho-serif {
+    font-family: var(--font-boho-serif);
+  }
+  .font-boho-script {
+    font-family: var(--font-boho-script);
+  }
+  .font-boho-sans {
+    font-family: var(--font-boho-sans);
+  }
+
+  /* Landing page (Invitory) theme */
+  .font-serif-title {
+    font-family: 'Playfair Display', Georgia, serif;
+  }
+  .font-sans-body {
+    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  }
+  .font-landing-script {
+    font-family: 'Sacramento', cursive;
+  }
+  .font-cinzel {
+    font-family: 'Cinzel', serif;
+  }
+
+  /* Kawung-inspired batik texture, tiled at low opacity */
+  .batik-texture {
+    background-image: radial-gradient(
+        circle at 25% 25%,
+        color-mix(in srgb, var(--color-gold-400) 55%, transparent) 0,
+        color-mix(in srgb, var(--color-gold-400) 55%, transparent) 2px,
+        transparent 2.5px
+      ),
+      radial-gradient(
+        circle at 75% 75%,
+        color-mix(in srgb, var(--color-gold-400) 55%, transparent) 0,
+        color-mix(in srgb, var(--color-gold-400) 55%, transparent) 2px,
+        transparent 2.5px
+      ),
+      repeating-radial-gradient(
+        circle at 0 0,
+        transparent 0,
+        transparent 18px,
+        color-mix(in srgb, var(--color-gold-400) 18%, transparent) 19px,
+        transparent 20px
+      );
+    background-size: 40px 40px, 40px 40px, 40px 40px;
+  }
+
+  /* Added from Template 5 (Jawa Elegan) */
+  .font-cinzel {
+    font-family: 'Cinzel', Georgia, serif;
+  }
+  .font-serif-royal {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+  }
+
+  .text-gold-gradient {
+    background: linear-gradient(135deg, #FFF0BA 0%, #D4AF37 40%, #AA7C11 80%, #FFF0BA 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .bg-gold-gradient {
+    background: linear-gradient(135deg, #E6CA65 0%, #D4AF37 50%, #996E13 100%);
+  }
+
+  .bg-royal-dark {
+    background: radial-gradient(circle at center, #1e0d05 0%, #100602 100%);
+  }
+
+  .border-gold-glow {
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.25), inset 0 0 15px rgba(212, 175, 55, 0.15);
+  }
+
+  .border-gold-subtle {
+    border: 1px solid rgba(212, 175, 55, 0.3);
+  }
+}
+
+/* Custom Animations from Template 5 */
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-12px) rotate(3deg);
+  }
+}
+
+@keyframes spinSlow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes pulseGold {
+  0%, 100% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.05);
+  }
+}
+
+@layer utilities {
+  .animate-float-slow {
+    animation: floatSlow 6s ease-in-out infinite;
+  }
+
+  .animate-spin-slow {
+    animation: spinSlow 30s linear infinite;
+  }
+
+  .animate-pulse-gold {
+    animation: pulseGold 3s ease-in-out infinite;
+  }
+
+  .shimmer-effect {
+    background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(212,175,55,0.4) 50%, rgba(255,255,255,0) 100%);
+    background-size: 200% 100%;
+    animation: shimmer 3s infinite;
+  }
+}
+
+/* Landing page (Invitory) — mesh gradient blobs & glassmorphism */
+@keyframes landing-blob-float-slow {
+  0%, 100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  50% {
+    transform: translate(20px, -25px) scale(1.05);
+  }
+}
+
+@keyframes landing-blob-float-reverse {
+  0%, 100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  50% {
+    transform: translate(-25px, 20px) scale(0.95);
+  }
+}
+
+@keyframes landing-blob-pulse-soft {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 0.7; }
+}
+
+@layer utilities {
+  .animate-blob-float-slow {
+    animation: landing-blob-float-slow 12s ease-in-out infinite;
+  }
+
+  .animate-blob-float-reverse {
+    animation: landing-blob-float-reverse 15s ease-in-out infinite;
+  }
+
+  .animate-blob-pulse-soft {
+    animation: landing-blob-pulse-soft 6s ease-in-out infinite;
+  }
+
+  .glass-panel {
+    background: rgba(255, 255, 255, 0.35);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+  }
+
+  .glass-panel-subtle {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+  }
+
+  .glass-card {
+    background: rgba(255, 255, 255, 0.45);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.05);
+  }
+
+  .glass-card-hover {
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .glass-card-hover:hover {
+    background: rgba(255, 255, 255, 0.65);
+    transform: translateY(-4px);
+    box-shadow: 0 25px 50px -12px rgba(168, 85, 247, 0.12);
+    border-color: rgba(255, 255, 255, 0.8);
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}

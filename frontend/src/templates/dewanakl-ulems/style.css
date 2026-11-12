@@ -1,0 +1,211 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Noto+Naskh+Arabic:wght@400;600;700&family=Sacramento&display=swap');
+
+/* Font Families matching Ulems */
+.font-esthetic {
+  font-family: 'Sacramento', cursive !important;
+}
+
+.font-josefin {
+  font-family: 'Josefin Sans', sans-serif !important;
+}
+
+.font-arabic {
+  font-family: 'Noto Naskh Arabic', serif !important;
+}
+
+/* Authentic Ulems Color Themes */
+.ulems-theme-light {
+  --ulems-bg-main: #ffffff;
+  --ulems-bg-alt: #f8f9fa;
+  --ulems-bg-card: #f1f3f5;
+  --ulems-bg-card-alt: #ffffff;
+  --ulems-text-main: #212529;
+  --ulems-text-muted: #6c757d;
+  --ulems-border: #e9ecef;
+  --ulems-border-card: #dee2e6;
+  --ulems-nav-bg: rgba(255, 255, 255, 0.88);
+  --ulems-overlay: rgba(255, 255, 255, 0.6);
+  --ulems-btn-outline: #212529;
+  --ulems-btn-outline-hover-bg: #212529;
+  --ulems-btn-outline-hover-text: #ffffff;
+}
+
+.ulems-theme-dark {
+  --ulems-bg-main: #000000;
+  --ulems-bg-alt: #212529;
+  --ulems-bg-card: #2b3035;
+  --ulems-bg-card-alt: #1a1d20;
+  --ulems-text-main: #f8f9fa;
+  --ulems-text-muted: #adb5bd;
+  --ulems-border: #343a40;
+  --ulems-border-card: #495057;
+  --ulems-nav-bg: rgba(33, 37, 41, 0.88);
+  --ulems-overlay: rgba(0, 0, 0, 0.6);
+  --ulems-btn-outline: #f8f9fa;
+  --ulems-btn-outline-hover-bg: #f8f9fa;
+  --ulems-btn-outline-hover-text: #000000;
+}
+
+.ulems-wrapper {
+  background-color: var(--ulems-bg-main);
+  color: var(--ulems-text-main);
+  transition: background-color 350ms ease, color 350ms ease;
+  width: 100%;
+}
+
+/* Responsive Desktop Split: Slim smartphone container matching mobile screen size */
+@media (min-width: 1024px) {
+  .ulems-desktop-sidebar {
+    display: flex !important;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    bottom: 0 !important;
+    height: 100vh !important;
+    width: calc(100% - 420px) !important;
+    z-index: 20 !important;
+    overflow: hidden !important;
+  }
+  .ulems-mobile-container {
+    margin-left: calc(100% - 420px) !important;
+    width: 420px !important;
+    max-width: 420px !important;
+    min-height: 100vh !important;
+    position: relative !important;
+  }
+  .ulems-bottom-nav {
+    width: 420px !important;
+    right: 0 !important;
+    left: auto !important;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .ulems-desktop-sidebar {
+    display: flex !important;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    bottom: 0 !important;
+    height: 100vh !important;
+    width: calc(100% - 390px) !important;
+    z-index: 20 !important;
+    overflow: hidden !important;
+  }
+  .ulems-mobile-container {
+    margin-left: calc(100% - 390px) !important;
+    width: 390px !important;
+    max-width: 390px !important;
+    min-height: 100vh !important;
+    position: relative !important;
+  }
+  .ulems-bottom-nav {
+    width: 390px !important;
+    right: 0 !important;
+    left: auto !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .ulems-desktop-sidebar {
+    display: none !important;
+  }
+  .ulems-mobile-container {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+  }
+  .ulems-bottom-nav {
+    width: 100% !important;
+    left: 0 !important;
+    right: 0 !important;
+  }
+}
+
+/* Mouse Scroll Animation from Ulems */
+@keyframes ulemsScroll {
+  0% {
+    transform: translateY(0.75rem);
+    opacity: 0;
+  }
+  15% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+}
+
+.ulems-mouse-box {
+  width: 1.5rem;
+  height: 2.25rem;
+  box-sizing: content-box;
+}
+
+.ulems-mouse-dot {
+  width: 0.25rem;
+  height: 0.625rem;
+  animation: ulemsScroll 2.4s linear infinite;
+}
+
+/* Disc Spin Animation */
+@keyframes ulemsSpinIcon {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.ulems-spin-disc {
+  animation: ulemsSpinIcon 4s linear infinite;
+}
+
+/* Floating Love Hearts from Ulems */
+@keyframes ulemsLove {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(0.75rem) scale(1.1);
+  }
+}
+
+.animate-ulems-love {
+  animation: ulemsLove 4s ease-in-out infinite;
+}
+
+/* Desktop Sidebar Slideshow Slow Zoom */
+.ulems-slide {
+  transform: scale(1);
+  transition: transform 9s linear, opacity 1.2s ease-in-out;
+}
+
+.ulems-slide-active {
+  transform: scale(1.15);
+}
+
+/* Background Cover Home Mask */
+.ulems-bg-cover-home {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  mask-image: linear-gradient(0.5turn, transparent, black 40%, black 60%, transparent);
+  -webkit-mask-image: linear-gradient(0.5turn, transparent, black 40%, black 60%, transparent);
+}
+
+/* Outline Auto Button */
+.ulems-btn-outline {
+  border: 1px solid var(--ulems-btn-outline);
+  color: var(--ulems-btn-outline);
+  background-color: transparent;
+  transition: all 250ms ease;
+}
+
+.ulems-btn-outline:hover {
+  background-color: var(--ulems-btn-outline-hover-bg);
+  color: var(--ulems-btn-outline-hover-text);
+}

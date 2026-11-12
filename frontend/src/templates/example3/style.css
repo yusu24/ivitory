@@ -1,0 +1,50 @@
+@import "tailwindcss";
+
+/* Custom utility for hiding scrollbars */
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+/* Base style resets */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom Animation Keyframes */
+@keyframes bar-bounce {
+  0% {
+    height: 4px;
+  }
+  100% {
+    height: 14px;
+  }
+}
+
+@keyframes float-slow {
+  0%, 100% {
+    transform: translateY(0) translateX(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-40px) translateX(20px) rotate(180deg);
+  }
+}
+
+/* Custom Font Utilities to guarantee matching on any tailwind version */
+.font-script {
+  font-family: 'Great Vibes', 'Parisienne', cursive, sans-serif;
+}
+
+.font-serif {
+  font-family: 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
+}
+
+.font-sans {
+  font-family: 'Inter', system-ui, sans-serif;
+}
+

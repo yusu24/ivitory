@@ -1,0 +1,278 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 1024" width="1440" height="1024">
+  <defs>
+    <!-- Background Gradients -->
+    <linearGradient id="bgCanvas" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F9F6F2" />
+      <stop offset="100%" stop-color="#FAF5EE" />
+    </linearGradient>
+    
+    <linearGradient id="textGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0F172A" />
+      <stop offset="50%" stop-color="#3B0764" />
+      <stop offset="100%" stop-color="#1E293B" />
+    </linearGradient>
+
+    <linearGradient id="brandGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#A855F7" />
+      <stop offset="50%" stop-color="#F472B6" />
+      <stop offset="100%" stop-color="#FDA4AF" />
+    </linearGradient>
+
+    <linearGradient id="featureTagGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#A855F7" />
+      <stop offset="100%" stop-color="#EC4899" />
+    </linearGradient>
+
+    <linearGradient id="cardPink" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFE4E6" />
+      <stop offset="100%" stop-color="#FECDD3" />
+    </linearGradient>
+
+    <linearGradient id="cardIndigo" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E0E7FF" />
+      <stop offset="100%" stop-color="#DDD6FE" />
+    </linearGradient>
+
+    <!-- Filters & Shadows -->
+    <filter id="softShadow" x="-10%" y="-10%" width="120%" height="125%">
+      <feDropShadow dx="0" dy="4" stdDeviation="12" flood-color="#0F172A" flood-opacity="0.05" />
+    </filter>
+
+    <filter id="cardShadow" x="-10%" y="-10%" width="120%" height="125%">
+      <feDropShadow dx="0" dy="16" stdDeviation="24" flood-color="#3B0764" flood-opacity="0.07" />
+    </filter>
+
+    <filter id="btnShadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="10" stdDeviation="16" flood-color="#0F172A" flood-opacity="0.18" />
+    </filter>
+
+    <filter id="blurBlob" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="90" />
+    </filter>
+  </defs>
+
+  <style>
+    .font-serif { font-family: 'Playfair Display', Georgia, serif; }
+    .font-sans { font-family: 'Plus Jakarta Sans', Inter, -apple-system, BlinkMacSystemFont, sans-serif; }
+  </style>
+
+  <!-- 1. Background Layers -->
+  <g id="Background" class="font-sans">
+    <rect width="1440" height="1024" fill="url(#bgCanvas)" />
+    
+    <!-- Ambient Glow Blobs -->
+    <g id="Glow-Blobs" filter="url(#blurBlob)">
+      <circle cx="100" cy="150" r="280" fill="#FFE1E1" opacity="0.75" />
+      <circle cx="1350" cy="850" r="320" fill="#E2EAFB" opacity="0.7" />
+      <circle cx="1250" cy="280" r="220" fill="#FDFCF0" opacity="0.65" />
+      <circle cx="200" cy="650" r="200" fill="#E8D5C4" opacity="0.45" />
+    </g>
+  </g>
+
+  <!-- 2. Navbar -->
+  <g id="Navbar" class="font-sans">
+    <rect x="120" y="24" width="1200" height="64" rx="32" fill="#FFFFFF" fill-opacity="0.65" stroke="#FFFFFF" stroke-opacity="0.8" stroke-width="1.5" filter="url(#softShadow)" />
+    
+    <!-- Brand Logo -->
+    <g id="Brand-Logo" transform="translate(150, 36)">
+      <circle cx="20" cy="20" r="18" fill="url(#brandGrad)" />
+      <path d="M20 12 L22 17 L27 19 L22 21 L20 26 L18 21 L13 19 L18 17 Z" fill="#FFFFFF" />
+      <text x="48" y="26" font-size="20" font-weight="800" fill="#0F172A" letter-spacing="-0.5">Invitory</text>
+    </g>
+
+    <!-- Nav Links -->
+    <g id="Nav-Menu" font-size="14" font-weight="600" fill="#475569">
+      <text x="500" y="61">Template</text>
+      <text x="610" y="61">Fitur</text>
+      <text x="685" y="61">Cara Kerja</text>
+      <text x="795" y="61">Harga</text>
+      <text x="875" y="61">Testimoni</text>
+    </g>
+
+    <!-- Nav Actions -->
+    <g id="Nav-Actions" transform="translate(1080, 36)">
+      <text x="25" y="25" font-size="14" font-weight="700" fill="#1E293B">Masuk</text>
+      <g id="Btn-Buat-Undangan">
+        <rect x="90" y="0" width="140" height="40" rx="20" fill="#0F172A" />
+        <text x="118" y="25" font-size="13" font-weight="700" fill="#FFFFFF">Buat Undangan</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- 3. Floating Accent Badges -->
+  <g id="Floating-Accents" class="font-sans">
+    <!-- Heart Badge -->
+    <g id="Badge-Heart" transform="translate(90, 290)">
+      <circle cx="28" cy="28" r="28" fill="#FFFFFF" fill-opacity="0.75" stroke="#FFFFFF" stroke-width="1.5" filter="url(#softShadow)" />
+      <path d="M28 36 C28 36 18 30 18 23 C18 19.5 20.8 17 24 17 C25.8 17 27.2 18 28 19.2 C28.8 18 30.2 17 32 17 C35.2 17 38 19.5 38 23 C38 30 28 36 28 36 Z" fill="#F472B6" />
+    </g>
+
+    <!-- Ring Badge -->
+    <g id="Badge-Ring" transform="translate(1290, 240)">
+      <circle cx="32" cy="32" r="32" fill="#FFFFFF" fill-opacity="0.65" stroke="#FFFFFF" stroke-width="1.5" filter="url(#softShadow)" />
+      <text x="20" y="42" font-size="24">💍</text>
+    </g>
+
+    <!-- Sparkles Badge -->
+    <g id="Badge-Sparkles" transform="translate(140, 710)">
+      <circle cx="22" cy="22" r="22" fill="#FAF5FF" fill-opacity="0.8" stroke="#FFFFFF" stroke-width="1.5" filter="url(#softShadow)" />
+      <path d="M22 13 L23.5 18 L28.5 19.5 L23.5 21 L22 26 L20.5 21 L15.5 19.5 L20.5 18 Z" fill="#9333EA" />
+    </g>
+  </g>
+
+  <!-- 4. Hero Content Header -->
+  <g id="Hero-Header" text-anchor="middle" class="font-sans">
+    <!-- Platform Pill -->
+    <g id="Category-Pill" transform="translate(720, 150)">
+      <rect x="-190" y="0" width="380" height="34" rx="17" fill="#FFFFFF" fill-opacity="0.6" stroke="#FFFFFF" stroke-opacity="0.8" stroke-width="1.2" />
+      <circle cx="-160" cy="17" r="4.5" fill="#A855F7" />
+      <text x="-145" y="21" text-anchor="start" font-size="11" font-weight="800" fill="#475569" letter-spacing="2.2">DIGITAL INVITATION PLATFORM #1 INDONESIA</text>
+    </g>
+
+    <!-- Main Title -->
+    <g id="Headline">
+      <text x="720" y="245" class="font-serif" font-style="italic" font-size="78" fill="#1E293B" letter-spacing="-1.5">Your Story,</text>
+      <text x="720" y="325" font-size="78" font-weight="900" fill="url(#textGrad)" letter-spacing="-2">Beautifully Shared.</text>
+    </g>
+
+    <!-- Subtitle -->
+    <g id="Subtitle" fill="#475569" font-size="18" font-weight="400">
+      <text x="720" y="380">Buat momen pernikahan &amp; acara istimewa Anda tak terlupakan dengan undangan digital yang</text>
+      <text x="720" y="408"><tspan font-weight="700" fill="#581C87">elegan, interaktif,</tspan> dan siap disebar dalam 5 menit.</text>
+    </g>
+
+    <!-- CTA Buttons -->
+    <g id="CTA-Group" transform="translate(450, 448)">
+      <!-- Primary Button -->
+      <g id="Btn-Primary" filter="url(#btnShadow)">
+        <rect x="0" y="0" width="260" height="58" rx="20" fill="#0F172A" />
+        <text x="32" y="35" text-anchor="start" font-size="16" font-weight="700" fill="#FFFFFF">Mulai Desain Undangan</text>
+        <!-- Arrow Right -->
+        <path d="M218 29 L210 23 L210 35 Z" fill="#D8B4FE" />
+        <line x1="198" y1="29" x2="214" y2="29" stroke="#D8B4FE" stroke-width="2.5" stroke-linecap="round" />
+      </g>
+
+      <!-- Secondary Button -->
+      <g id="Btn-Secondary" transform="translate(280, 0)">
+        <rect x="0" y="0" width="260" height="58" rx="20" fill="#FFFFFF" fill-opacity="0.75" stroke="#FFFFFF" stroke-opacity="0.9" stroke-width="1.5" filter="url(#softShadow)" />
+        <circle cx="36" cy="29" r="15" fill="#F3E8FF" />
+        <!-- Play Icon -->
+        <polygon points="34,23 43,29 34,35" fill="#7E22CE" />
+        <text x="64" y="35" text-anchor="start" font-size="15" font-weight="700" fill="#1E293B">Lihat Demo Interactive</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- 5. Glassmorphism Featured Card -->
+  <g id="Featured-Card" class="font-sans" transform="translate(230, 545)">
+    <!-- Container -->
+    <rect width="980" height="280" rx="36" fill="#FFFFFF" fill-opacity="0.38" stroke="#FFFFFF" stroke-opacity="0.65" stroke-width="1.8" filter="url(#cardShadow)" />
+    
+    <!-- Left Details -->
+    <g id="Theme-Info" transform="translate(48, 42)">
+      <!-- Pill Badge -->
+      <g id="Theme-Badge">
+        <circle cx="16" cy="16" r="16" fill="url(#featureTagGrad)" />
+        <path d="M16 9 L17.5 13.5 L22 15 L17.5 16.5 L16 21 L14.5 16.5 L10 15 L14.5 13.5 Z" fill="#FFFFFF" />
+        <rect x="42" y="3" width="160" height="26" rx="13" fill="#FFFFFF" fill-opacity="0.6" stroke="#FFFFFF" stroke-width="1" />
+        <text x="56" y="20" font-size="11" font-weight="800" fill="#334155" letter-spacing="1">FEATURED THEME 2026</text>
+      </g>
+
+      <!-- Theme Title -->
+      <text x="0" y="80" class="font-serif" font-style="italic" font-size="34" font-weight="700" fill="#1E293B">The Ethereal Garden</text>
+      
+      <!-- Theme Desc -->
+      <text x="0" y="118" font-size="15" font-weight="400" fill="#475569">Estetika floral lembut transparan dengan efek animasi kelopak mekar,</text>
+      <text x="0" y="142" font-size="15" font-weight="400" fill="#475569">lagu latar romantis, dan sistem RSVP digital otomatis.</text>
+
+      <!-- Feature Tags -->
+      <g id="Features-List" transform="translate(0, 168)" font-size="13" font-weight="700" fill="#334155">
+        <!-- Tag 1 -->
+        <g id="Tag-RSVP">
+          <rect x="0" y="0" width="195" height="34" rx="12" fill="#FFFFFF" fill-opacity="0.55" stroke="#FFFFFF" stroke-width="1" />
+          <circle cx="18" cy="17" r="7" fill="#10B981" />
+          <polyline points="15,17 17,19 22,14" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" />
+          <text x="34" y="22">RSVP &amp; Amplop Digital</text>
+        </g>
+
+        <!-- Tag 2 -->
+        <g id="Tag-Music" transform="translate(210, 0)">
+          <rect x="0" y="0" width="190" height="34" rx="12" fill="#FFFFFF" fill-opacity="0.55" stroke="#FFFFFF" stroke-width="1" />
+          <circle cx="18" cy="17" r="7" fill="#10B981" />
+          <polyline points="15,17 17,19 22,14" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" />
+          <text x="34" y="22">Custom Music &amp; Maps</text>
+        </g>
+      </g>
+    </g>
+
+    <!-- Right Mini Cards Preview -->
+    <g id="Mini-Previews" transform="translate(620, 36)">
+      <!-- Card 1: Pernikahan -->
+      <g id="Card-Pernikahan" filter="url(#softShadow)">
+        <rect x="0" y="0" width="150" height="205" rx="20" fill="url(#cardPink)" stroke="#FFFFFF" stroke-width="1.5" />
+        <circle cx="32" cy="32" r="16" fill="#FFFFFF" fill-opacity="0.8" />
+        <text x="24" y="38" font-size="16">💐</text>
+        
+        <g transform="translate(18, 145)">
+          <text x="0" y="14" font-size="10" font-weight="800" fill="#9F1239" letter-spacing="1">PERNIKAHAN</text>
+          <text x="0" y="36" class="font-serif" font-size="15" font-weight="700" fill="#1E293B">Rian &amp; Anindya</text>
+        </g>
+      </g>
+
+      <!-- Card 2: Sweet 17th -->
+      <g id="Card-Sweet-17" transform="translate(170, 24)" filter="url(#softShadow)">
+        <rect x="0" y="0" width="150" height="205" rx="20" fill="url(#cardIndigo)" stroke="#FFFFFF" stroke-width="1.5" />
+        <circle cx="32" cy="32" r="16" fill="#FFFFFF" fill-opacity="0.8" />
+        <text x="24" y="38" font-size="16">🎂</text>
+
+        <g transform="translate(18, 145)">
+          <text x="0" y="14" font-size="10" font-weight="800" fill="#3730A3" letter-spacing="1">SWEET 17TH</text>
+          <text x="0" y="36" font-size="14" font-weight="800" fill="#1E293B">Kayla Party</text>
+        </g>
+      </g>
+    </g>
+  </g>
+
+  <!-- 6. Social Proof Counter Bar -->
+  <g id="Social-Proof-Bar" class="font-sans" transform="translate(230, 855)">
+    <rect width="980" height="96" rx="28" fill="#FFFFFF" fill-opacity="0.32" stroke="#FFFFFF" stroke-opacity="0.55" stroke-width="1.5" filter="url(#softShadow)" />
+    
+    <!-- Stat 1 -->
+    <g id="Stat-1" transform="translate(100, 36)" text-anchor="middle">
+      <text x="0" y="20" font-size="30" font-weight="900" fill="#1E293B">15,000+</text>
+      <text x="0" y="44" font-size="11" font-weight="800" fill="#64748B" letter-spacing="1">UNDANGAN TERBUAT</text>
+    </g>
+
+    <!-- Divider 1 -->
+    <line x1="260" y1="24" x2="260" y2="72" stroke="#E2E8F0" stroke-width="1.5" />
+
+    <!-- Stat 2 -->
+    <g id="Stat-2" transform="translate(370, 36)" text-anchor="middle">
+      <text x="-12" y="20" font-size="30" font-weight="900" fill="#1E293B">4.9</text>
+      <polygon points="26,4 29,14 39,14 31,20 34,30 26,24 18,30 21,20 13,14 23,14" fill="#F59E0B" />
+      <text x="0" y="44" font-size="11" font-weight="800" fill="#64748B" letter-spacing="1">KEPUASAN PENGGUNA</text>
+    </g>
+
+    <!-- Divider 2 -->
+    <line x1="500" y1="24" x2="500" y2="72" stroke="#E2E8F0" stroke-width="1.5" />
+
+    <!-- Stat 3 -->
+    <g id="Stat-3" transform="translate(610, 36)" text-anchor="middle">
+      <text x="0" y="20" font-size="30" font-weight="900" fill="#1E293B">5 Menit</text>
+      <text x="0" y="44" font-size="11" font-weight="800" fill="#64748B" letter-spacing="1">PROSES PEMBUATAN</text>
+    </g>
+
+    <!-- Divider 3 -->
+    <line x1="740" y1="24" x2="740" y2="72" stroke="#E2E8F0" stroke-width="1.5" />
+
+    <!-- Stat 4 -->
+    <g id="Stat-4" transform="translate(860, 36)" text-anchor="middle">
+      <g transform="translate(-40, 2)">
+        <path d="M12 2 L22 6 L22 13 C22 19 17 23 12 25 C7 23 2 19 2 13 L2 6 Z" fill="#059669" />
+        <polyline points="7,13 10,16 17,9" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" />
+      </g>
+      <text x="15" y="20" font-size="30" font-weight="900" fill="#047857">100%</text>
+      <text x="0" y="44" font-size="11" font-weight="800" fill="#64748B" letter-spacing="1">AMAN &amp; TANPA IKLAN</text>
+    </g>
+  </g>
+</svg>

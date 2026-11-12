@@ -1,0 +1,210 @@
+/* ==========================================================================
+   Ivory Garden — Botanical Editorial Wedding Theme
+   All rules are scoped under .ivory-garden so they never leak to other templates.
+   ========================================================================== */
+
+.ivory-garden {
+  --ig-paper: #fbf8f1;
+  --ig-ivory: #f5efe3;
+  --ig-ivory-deep: #ece3d1;
+  --ig-sage-50: #eef1ea;
+  --ig-sage-100: #dfe5d7;
+  --ig-sage-300: #b3bfa3;
+  --ig-sage-400: #8f9d7d;
+  --ig-sage-500: #6f7e5f;
+  --ig-sage-700: #46523d;
+  --ig-sage-900: #2c3427;
+  --ig-gold: #b4955a;
+  --ig-gold-soft: #d6c39a;
+  --ig-blush: #ead9cc;
+  --ig-ink: #3a352d;
+  --ig-muted: #7b7366;
+
+  background: var(--ig-paper);
+  color: var(--ig-ink);
+  font-family: 'Jost', system-ui, sans-serif;
+  font-weight: 300;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ---------- Typography ---------- */
+.ivory-garden .ig-serif {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+}
+.ivory-garden .ig-script {
+  font-family: 'Pinyon Script', 'Great Vibes', cursive;
+  font-weight: 400;
+}
+.ivory-garden .ig-sans {
+  font-family: 'Jost', system-ui, sans-serif;
+}
+.ivory-garden .ig-arabic {
+  font-family: 'Amiri', 'Noto Naskh Arabic', serif;
+}
+.ivory-garden .ig-eyebrow {
+  font-family: 'Jost', system-ui, sans-serif;
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.38em;
+  text-transform: uppercase;
+  color: var(--ig-sage-500);
+}
+
+/* ---------- Surfaces ---------- */
+.ivory-garden .ig-paper-texture {
+  background-color: var(--ig-paper);
+  background-image:
+    radial-gradient(circle at 18% 12%, rgba(214, 195, 154, 0.16) 0, transparent 42%),
+    radial-gradient(circle at 85% 88%, rgba(143, 157, 125, 0.14) 0, transparent 45%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.45 0 0 0 0 0.4 0 0 0 0 0.32 0 0 0 0.05 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+.ivory-garden .ig-sage-surface {
+  background-color: var(--ig-sage-700);
+  background-image:
+    radial-gradient(circle at 20% 0%, rgba(214, 195, 154, 0.18) 0, transparent 45%),
+    radial-gradient(circle at 100% 100%, rgba(0, 0, 0, 0.18) 0, transparent 55%);
+  color: var(--ig-paper);
+}
+
+.ivory-garden .ig-card {
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(180, 149, 90, 0.22);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.8) inset, 0 18px 40px -24px rgba(70, 82, 61, 0.35);
+  backdrop-filter: blur(6px);
+}
+
+/* Arch frame (classic garden window) */
+.ivory-garden .ig-arch {
+  border-radius: 999px 999px 18px 18px;
+  overflow: hidden;
+}
+.ivory-garden .ig-arch-outline {
+  border-radius: 999px 999px 22px 22px;
+  border: 1px solid rgba(180, 149, 90, 0.55);
+}
+
+/* Fine gold hairline divider */
+.ivory-garden .ig-hairline {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(180, 149, 90, 0.7), transparent);
+}
+
+/* ---------- Controls ---------- */
+.ivory-garden .ig-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  border-radius: 999px;
+  background: var(--ig-sage-700);
+  color: var(--ig-paper);
+  font-family: 'Jost', system-ui, sans-serif;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  padding: 0.95rem 1.9rem;
+  box-shadow: 0 12px 28px -14px rgba(44, 52, 39, 0.65);
+  transition: transform 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
+}
+.ivory-garden .ig-btn-primary:hover {
+  background: var(--ig-sage-900);
+  transform: translateY(-1px);
+  box-shadow: 0 16px 30px -14px rgba(44, 52, 39, 0.75);
+}
+.ivory-garden .ig-btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 999px;
+  border: 1px solid rgba(180, 149, 90, 0.55);
+  color: var(--ig-sage-700);
+  font-family: 'Jost', system-ui, sans-serif;
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  padding: 0.7rem 1.3rem;
+  transition: background 0.25s ease, color 0.25s ease;
+}
+.ivory-garden .ig-btn-ghost:hover {
+  background: var(--ig-sage-50);
+}
+
+.ivory-garden .ig-input {
+  width: 100%;
+  border: 0;
+  border-bottom: 1px solid rgba(111, 126, 95, 0.35);
+  background: transparent;
+  padding: 0.7rem 0.1rem;
+  font-family: 'Jost', system-ui, sans-serif;
+  font-size: 0.92rem;
+  color: var(--ig-ink);
+  transition: border-color 0.2s ease;
+}
+.ivory-garden .ig-input::placeholder {
+  color: #a59d8f;
+}
+.ivory-garden .ig-input:focus {
+  outline: none;
+  border-bottom-color: var(--ig-gold);
+}
+
+/* ---------- Motion ---------- */
+@keyframes ig-sway {
+  0%,
+  100% {
+    transform: rotate(-2deg);
+  }
+  50% {
+    transform: rotate(2deg);
+  }
+}
+.ivory-garden .ig-sway {
+  animation: ig-sway 7s ease-in-out infinite;
+  transform-origin: top center;
+}
+
+@keyframes ig-float-petal {
+  0% {
+    transform: translate3d(0, -10vh, 0) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.85;
+  }
+  90% {
+    opacity: 0.7;
+  }
+  100% {
+    transform: translate3d(60px, 110vh, 0) rotate(320deg);
+    opacity: 0;
+  }
+}
+.ivory-garden .ig-petal {
+  position: absolute;
+  top: 0;
+  width: 12px;
+  height: 9px;
+  border-radius: 80% 0 80% 0;
+  background: linear-gradient(135deg, #f1e3d6, #d9c3ad);
+  animation: ig-float-petal linear infinite;
+  pointer-events: none;
+}
+
+@keyframes ig-spin-slow {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.ivory-garden .ig-spin-slow {
+  animation: ig-spin-slow 9s linear infinite;
+}
+
+.ivory-garden .ig-no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.ivory-garden .ig-no-scrollbar {
+  scrollbar-width: none;
+}
