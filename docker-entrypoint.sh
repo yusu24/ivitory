@@ -36,4 +36,8 @@ php artisan storage:link --force || true
 php artisan migrate --force
 php artisan db:seed --force || true
 
+# Re-apply ownership after artisan commands (which run as root) so Apache (www-data) can write to SQLite & storage
+chown -R www-data:www-data database storage bootstrap/cache
+chmod -R 775 database storage bootstrap/cache
+
 exec apache2-foreground
