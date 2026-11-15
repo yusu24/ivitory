@@ -31,6 +31,7 @@ RUN apt-get update && apt-get install -y \
         mbstring \
         exif \
     && a2enmod rewrite headers \
+    && echo "ServerName localhost" >> /etc/apache2/apache2.conf \
     && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # Install Composer
@@ -55,6 +56,18 @@ RUN composer dump-autoload --optimize --no-dev
 # Copy built frontend assets into Laravel public directory
 COPY --from=frontend-builder /app/frontend/dist/ ./public/
 RUN if [ -f ./public/index.html ]; then mv ./public/index.html ./public/spa.html; fi
+
+# Pre-build SQLite database, run migrations & seeders, and set permissions at build time
+# so container startup on Render's 0.1 CPU Free tier is instantaneous (<1s)
+RUN cp .env.example .env \
+    && php artisan key:generate --force \
+    && mkdir -p database storage/app/public storage/framework/cache/data storage/framework/sessions storage/framework/views storage/logs bootstrap/cache \
+    && touch database/database.sqlite \
+    && php artisan storage:link --force \
+    && DB_CONNECTION=sqlite php artisan migrate --force \
+    && DB_CONNECTION=sqlite php artisan db:seed --force \
+    && chown -R www-data:www-data /var/www/html/database /var/www/html/storage /var/www/html/bootstrap/cache \
+    && chmod -R 775 /var/www/html/database /var/www/html/storage /var/www/html/bootstrap/cache
 
 # Copy entrypoint script and normalize line endings
 COPY docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
