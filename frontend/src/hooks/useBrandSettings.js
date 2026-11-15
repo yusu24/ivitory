@@ -1,7 +1,7 @@
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 import api, { ensureCsrfCookie } from '../lib/axios';
 
-const BRAND_CACHE_KEY = 'invitory_brand_cache';
+const BRAND_CACHE_KEY = 'invitory_brand_cache_v2';
 
 export function resolveMediaUrl(url) {
   if (!url || typeof url !== 'string') return url;
@@ -14,6 +14,14 @@ export function resolveMediaUrl(url) {
       const parsed = new URL(url, window.location.origin);
       if (parsed.hostname === 'localhost' || parsed.hostname === '127.0.0.1') {
         parsed.hostname = window.location.hostname;
+        if (window.location.protocol === 'https:') {
+          parsed.protocol = 'https:';
+          parsed.port = '';
+        }
+        return parsed.toString();
+      }
+      if (window.location.protocol === 'https:' && parsed.protocol === 'http:' && parsed.hostname === window.location.hostname) {
+        parsed.protocol = 'https:';
         return parsed.toString();
       }
     }
@@ -35,7 +43,9 @@ export function normalizeBrand(data) {
 function getCachedBrand() {
   try {
     const raw = localStorage.getItem(BRAND_CACHE_KEY);
-    return raw ? normalizeBrand(JSON.parse(raw)) : undefined;
+    if (!raw) return undefined;
+    const parsed = normalizeBrand(JSON.parse(raw));
+    return parsed?.logo_url ? parsed : undefined;
   } catch {
     return undefined;
   }

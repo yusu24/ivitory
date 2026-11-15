@@ -24,8 +24,10 @@ class LandingContent extends Model
 
     public static function current(): self
     {
-        return static::first() ?? static::create([
+        $content = static::first() ?? static::create([
             'site_name' => 'Invitory',
+            'logo_path' => 'brand/aeFZ5C3G4NYUdiDISxtfu2Www7nZ06izGgLkTvTE.png',
+            'favicon_path' => 'brand/YzREQjuI8PI73vMoG0mZH1ssJ6623h4565PTClMO.png',
             'hero_eyebrow' => 'Undangan Digital',
             'hero_title' => 'Rayakan hari bahagiamu dengan undangan yang kekinian & intim',
             'hero_subtitle' => 'Buat undangan pernikahan digital dalam hitungan menit. Elegan, personal untuk setiap tamu, lengkap dengan RSVP, galeri, dan cerita cintamu.',
@@ -37,5 +39,14 @@ class LandingContent extends Model
                 ['icon' => 'Sparkles', 'title' => 'RSVP & Buku Tamu', 'description' => 'Kelola kehadiran dan ucapan tamu langsung dari dashboard.'],
             ],
         ]);
+
+        if (! $content->logo_path || ! $content->favicon_path) {
+            $content->update([
+                'logo_path' => $content->logo_path ?: 'brand/aeFZ5C3G4NYUdiDISxtfu2Www7nZ06izGgLkTvTE.png',
+                'favicon_path' => $content->favicon_path ?: 'brand/YzREQjuI8PI73vMoG0mZH1ssJ6623h4565PTClMO.png',
+            ]);
+        }
+
+        return $content;
     }
 }
