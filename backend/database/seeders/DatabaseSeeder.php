@@ -24,5 +24,9 @@ class DatabaseSeeder extends Seeder
                 'email_verified_at' => now(),
             ]
         );
+
+        if (\App\Models\Invitation::count() === 0) {
+            $this->call(DemoInvitationSeeder::class);
+        }
     }
 }

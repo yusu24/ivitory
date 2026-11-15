@@ -1,23 +1,26 @@
 import axios from 'axios';
 
 export function getApiBaseUrl() {
-  const envUrl = import.meta.env.VITE_API_URL || 'http://localhost:8000';
+  if (import.meta.env.VITE_API_URL) {
+    return import.meta.env.VITE_API_URL.replace(/\/$/, '');
+  }
   if (
     typeof window !== 'undefined' &&
     window.location.hostname !== 'localhost' &&
     window.location.hostname !== '127.0.0.1'
   ) {
-    try {
-      const parsed = new URL(envUrl, window.location.origin);
-      if (parsed.hostname === 'localhost' || parsed.hostname === '127.0.0.1') {
-        parsed.hostname = window.location.hostname;
-        return parsed.toString().replace(/\/$/, '');
-      }
-    } catch {
-      // ignore
+    // In production (HTTPS or standard port 80/443), frontend & backend share the same origin
+    if (
+      window.location.protocol === 'https:' ||
+      window.location.port === '' ||
+      window.location.port === '80' ||
+      window.location.port === '443'
+    ) {
+      return window.location.origin;
     }
+    return `http://${window.location.hostname}:8000`;
   }
-  return envUrl;
+  return 'http://localhost:8000';
 }
 
 const api = axios.create({
