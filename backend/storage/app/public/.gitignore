@@ -1,2 +1,12 @@
 *
 !.gitignore
+!brand/
+!brand/**
+!invitations/
+!invitations/**
+!music/
+!music/**
+!templates/
+!templates/**
+!gallery/
+!gallery/*.JPEG
